@@ -59,14 +59,14 @@ export const NavBar: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="items-center hidden space-x-8 md:flex">
+            <div className="items-center hidden space-x-8 md:flex *:font-poppins">
               <a href="#" className="text-slate-600 hover:text-blue-600">
                 Home
               </a>
-              <a href="#" className="text-slate-600 hover:text-blue-600">
+              <a href="#about" className="text-slate-600 hover:text-blue-600">
                 About
               </a>
-              <a href="#" className="text-slate-600 hover:text-blue-600">
+              <a href="#services" className="text-slate-600 hover:text-blue-600">
                 Services
               </a>
               <a href="#" className="text-slate-600 hover:text-blue-600">
@@ -92,7 +92,7 @@ export const NavBar: React.FC = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-2 pt-2 pb-3 space-y-1 *:font-poppins">
               <a
                 href="#"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
@@ -100,19 +100,19 @@ export const NavBar: React.FC = () => {
                 Home
               </a>
               <a
-                href="#"
+                href="#about"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
               >
                 About
               </a>
               <a
-                href="#"
+                href="#services"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
               >
                 Services
               </a>
               <a
-                href="#"
+                href="#contact"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
               >
                 Contact

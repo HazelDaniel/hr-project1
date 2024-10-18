@@ -1,9 +1,5 @@
 import React, { useState, useMemo } from "react";
-import {
-  Users,
-  Target,
-  Briefcase,
-} from "lucide-react";
+import { Users, Target, Briefcase } from "lucide-react";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -87,7 +83,7 @@ type Service = {
 };
 
 const HRLandingPage: React.FC = () => {
-  const iconClasses = useMemo(() => "mb-4", []);
+  const iconClasses = useMemo(() => "mb-4 text-red", []);
 
   const services: Service[] = [
     {
@@ -115,18 +111,21 @@ const HRLandingPage: React.FC = () => {
 
       <Hero />
 
-      <div className="flex flex-col w-full py-16 bg-white md:py-24 h-max align-center">
-        <h2 className="mb-12 text-3xl font-semibold text-center text-slate-900">
+      <section
+        className="flex flex-col w-full py-16 bg-white md:py-24 h-max align-center"
+        id="about"
+      >
+        <h2 className="mb-12 text-3xl font-medium text-center text-slate-900 font-poppins">
           About Us
         </h2>
         <TimeBasedSlider />
-      </div>
+      </section>
 
       {/* Services Section */}
-      <div className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-50" id="services">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="mb-12 text-3xl font-semibold text-center text-slate-900">
+            <h2 className="mb-12 text-3xl font-medium text-center text-slate-900 font-poppins">
               Our Services
             </h2>
           </AnimatedSection>
@@ -136,14 +135,14 @@ const HRLandingPage: React.FC = () => {
                 <div className="p-6 transition-shadow bg-white rounded-lg shadow-sm hover:shadow-md">
                   <>
                     {service.icon == "briefcase" ? (
-                      <Briefcase className={iconClasses} />
+                      <Briefcase className={iconClasses} color="#cdcdcd" />
                     ) : service.icon === "target" ? (
-                      <Target className={iconClasses} />
+                      <Target className={iconClasses} color="#cdcdcd" />
                     ) : service.icon === "users" ? (
-                      <Users className={iconClasses} />
+                      <Users className={iconClasses} color="#cdcdcd" />
                     ) : null}
                   </>
-                  <h3 className="mb-2 text-xl font-semibold text-slate-900">
+                  <h3 className="mb-2 text-xl font-semibold text-slate-700">
                     {service.title}
                   </h3>
                   <p className="text-slate-600">{service.description}</p>
@@ -152,7 +151,7 @@ const HRLandingPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
