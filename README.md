@@ -13,3 +13,4 @@ This is a human resource landing page built with React. The page is divided into
 You can find the live version of the site at:
 
 - [hr-solutions.vercel.app](https://hr-solutions.vercel.app)
+- [hr-solutions link2](https://hr-project1.netlify.app/)
