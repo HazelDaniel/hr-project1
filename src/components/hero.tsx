@@ -26,7 +26,6 @@ export const Hero: React.FC = () => {
                         stroke-linecap="round"
                       />
                     </svg>
-
                   </span>{" "}
                   First
                 </h1>
@@ -61,12 +60,36 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
             </AnimatedSection>
-            <div className="w-full mt-12 lg:mt-0 md:flex-1 md:h-full h-[15rem] overflow-hidden">
-              <img
-                src="/images/hero-image.svg"
-                alt="HR Dashboard"
-                className="w-full h-[15rem] rounded-lg aspect-square mx-auto"
-              />
+            <div className="flex flex-col w-full p-2 mt-12 overflow-hidden rounded-lg md:p-4 lg:mt-0 md:flex-1 md:h-full h-max align-center ring-slate-100 ring-1">
+              <div className="flex flex-col items-start w-full gap-4 p-2 py-4 rounded-lg h-max ring-1 ring-slate-300">
+                <img
+                  src="/images/hero-image.svg"
+                  alt="HR Dashboard"
+                  className="w-full h-[15rem] rounded-lg aspect-square mx-auto"
+                />
+                <div className="w-full h-[12rem] rounded-md p-2">
+                  <div className="">
+                    <h3 className="mt-4 mb-4 text-xl font-medium md:mt-8 text-poppins text-slate-700">
+                      {" "}
+                      Our Partners
+                    </h3>
+                    <p className="w-full h-16 truncate">
+                      We have partnered with reputable companies all over the
+                      world; google, meta, dropbox, among many others, to bring
+                      you an awesome hiring experience.
+                    </p>
+                    <span className="text-[#3B69FB] inline-flex items-center w-max font-semibold cursor-pointer mt-2">
+                      Learn more
+                      <span className="inline w-4 h-4 ml-2">
+                        <ChevronRight
+                          className="w-full h-full"
+                          color="#3B69FB"
+                        />
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
