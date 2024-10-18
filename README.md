@@ -1,4 +1,3 @@
-```
 # Human Resource Landing Page
 
 This is a human resource landing page built with React. The page is divided into three main sections along with a footer.
