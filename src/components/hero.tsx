@@ -67,13 +67,13 @@ export const Hero: React.FC = () => {
                   alt="HR Dashboard"
                   className="w-full h-[15rem] rounded-lg aspect-square mx-auto"
                 />
-                <div className="w-full h-[12rem] rounded-md p-2">
+                <div className="w-full h-[10rem] md:h-[12rem] rounded-md p-2">
                   <div className="">
                     <h3 className="mt-4 mb-4 text-xl font-medium md:mt-8 text-poppins text-slate-700">
                       {" "}
                       Our Partners
                     </h3>
-                    <p className="w-full h-16 truncate">
+                    <p className="w-full h-8 truncate">
                       We have partnered with reputable companies all over the
                       world; google, meta, dropbox, among many others, to bring
                       you an awesome hiring experience.
