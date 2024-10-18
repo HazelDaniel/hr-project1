@@ -53,7 +53,7 @@ export const NavBar: React.FC = () => {
                   </defs>
                 </svg>
               </span>
-              <span className="text-2xl font-semibold text-transparent bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text">
+              <span className="font-semibold text-transparent md:text-2xl text-md bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text">
                 HR Solutions
               </span>
             </div>
