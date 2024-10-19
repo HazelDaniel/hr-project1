@@ -1,4 +1,4 @@
-import { X, Menu } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
 
 export const NavBar: React.FC = () => {
@@ -53,7 +53,7 @@ export const NavBar: React.FC = () => {
                   </defs>
                 </svg>
               </span>
-              <span className="font-semibold text-transparent md:text-2xl text-md bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text">
+              <span className="text-transparent font-regular md:text-2xl text-md bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text">
                 HR Solutions
               </span>
             </div>
@@ -63,10 +63,13 @@ export const NavBar: React.FC = () => {
               <a href="#" className="text-slate-600 hover:text-blue-600">
                 Home
               </a>
-              <a href="#about" className="text-slate-600 hover:text-blue-600">
+              <a href="#" className="text-slate-600 hover:text-blue-600">
                 About
               </a>
-              <a href="#services" className="text-slate-600 hover:text-blue-600">
+              <a
+                href="#services"
+                className="text-slate-600 hover:text-blue-600"
+              >
                 Services
               </a>
               <a href="#" className="text-slate-600 hover:text-blue-600">
@@ -77,13 +80,20 @@ export const NavBar: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="flex flex-col items-center justify-center md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-slate-600 hover:text-blue-600"
+                className="w-[20px] h-max text-slate-600 hover:text-blue-600 outline-none"
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? (
+                  <X size={24} />
+                ) : (
+                  <div className="flex flex-col w-full h-full gap-1">
+                    <span className="w-full h-[2px] rounded-md bg-black/70 active:bg-blue-600"></span>
+                    <span className="w-[80%] h-[2px] rounded-md bg-black/70 active:bg-blue-600 ml-auto"></span>
+                    <span className="w-full h-[2px] rounded-md bg-black/70 active:bg-blue-600"></span>
+                  </div>
+                )}
               </button>
             </div>
           </div>
@@ -96,28 +106,36 @@ export const NavBar: React.FC = () => {
               <a
                 href="#"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
+
               <a
                 href="#about"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a
                 href="#services"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </a>
               <a
                 href="#contact"
                 className="block px-3 py-2 text-slate-600 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
-              <button className="w-full px-3 py-2 text-left text-white bg-blue-600 rounded-md hover:bg-blue-700">
+              <button
+                className="w-full px-3 py-2 text-center text-white bg-blue-800 rounded-md hover:bg-blue-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Join Us
               </button>
             </div>

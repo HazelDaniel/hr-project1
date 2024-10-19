@@ -19,7 +19,7 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ${className} ${
+      className={`transition-all duration-500 ${className} ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{ transitionDelay: `${delay}ms` }}

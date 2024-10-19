@@ -7,3 +7,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer utilities {
+  .slick-dots li {
+    @apply w-3 h-3 rounded-none;
+  }
+}

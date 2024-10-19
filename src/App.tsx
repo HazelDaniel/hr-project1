@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { Users, Target, Briefcase } from "lucide-react";
 
 import Slider from "react-slick";
@@ -8,6 +8,7 @@ import { NavBar } from "./components/nav-bar";
 import { AnimatedSection } from "./components/animated-section";
 import { Hero } from "./components/hero";
 import { Footer } from "./components/footer";
+import scrollSvg from "scroll-svg";
 
 interface SlideContent {
   title: string;
@@ -31,6 +32,7 @@ const sliderData: SlideContent[] = [
 const TimeBasedSlider: React.FC = () => {
   const [_, setCurrentSlide] = useState<number>(0);
   const sliderRef = React.useRef<Slider | null>(null);
+  const sliderFrame = useRef<SVGPathElement>(null);
 
   const settings = useMemo(
     () => ({
@@ -52,20 +54,44 @@ const TimeBasedSlider: React.FC = () => {
     []
   );
 
+  useEffect(() => {
+    if (sliderFrame.current) {
+      const svg = scrollSvg(sliderFrame.current, {
+        offset: window.innerWidth > 800 ? -100 : 0,
+      });
+    }
+  }, [sliderFrame]);
+
   return (
-    <div className="w-full h-[40rem]">
+    <div className="w-full h-[40rem] relative">
+      <div className="absolute w-[99%] h-[29.5rem] z-10 left-1/2 translate-x-[-50%] top-1 rounded-md flex items-center justify-center">
+        <svg
+          viewBox="0 0 320 220"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M2 0.5H318C318.828 0.5 319.5 1.17157 319.5 2V218C319.5 218.828 318.828 219.5 318 219.5H2.00001C1.17158 219.5 0.5 218.828 0.5 218V2C0.5 1.17157 1.17157 0.5 2 0.5Z"
+            stroke="#FEFEFE"
+            strokeWidth={8}
+            ref={sliderFrame}
+          />
+        </svg>
+      </div>
       <Slider {...settings} ref={sliderRef}>
         {sliderData.map((slide, index) => (
-          <div key={index} className="relative h-[30rem]">
+          <div key={index} className="relative h-[30rem] w-full">
             <img
               src={slide.image}
               alt={slide.title}
               className="object-cover w-full h-full"
             />
 
-            <div className="absolute inset-0 flex items-center justify-center h-full bg-black bg-opacity-75">
+            <div className="absolute inset-0 flex items-center justify-center w-full h-full px-4 bg-black bg-opacity-75">
               <div className="text-center text-white">
-                <h2 className="mb-4 text-3xl font-semibold">{slide.title}</h2>
+                <h2 className="mb-4 text-3xl md:text-[3rem] font-semibold">{slide.title}</h2>
                 <p className="text-lg">{slide.description}</p>
               </div>
             </div>
@@ -112,10 +138,10 @@ const HRLandingPage: React.FC = () => {
       <Hero />
 
       <section
-        className="flex flex-col w-full py-16 bg-white md:py-24 h-max align-center"
+        className="flex flex-col w-full py-16 md:py-24 h-max align-center bg-gradient-to-br from-slate-50 from-5%"
         id="about"
       >
-        <h2 className="mb-12 text-3xl font-medium text-center text-slate-900 font-poppins">
+        <h2 className="section-title mb-12 text-[2rem] md:text-[8rem] font-thin text-center text-slate-600 font-poppins">
           About Us
         </h2>
         <TimeBasedSlider />
@@ -125,7 +151,7 @@ const HRLandingPage: React.FC = () => {
       <section className="py-16 bg-slate-50" id="services">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="mb-12 text-3xl font-medium text-center text-slate-900 font-poppins">
+            <h2 className="section-title mb-12 text-[2rem] md:text-[8rem] font-thin text-center text-slate-600 font-poppins">
               Our Services
             </h2>
           </AnimatedSection>
