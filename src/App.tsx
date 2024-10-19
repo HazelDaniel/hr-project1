@@ -56,7 +56,7 @@ const TimeBasedSlider: React.FC = () => {
 
   useEffect(() => {
     if (sliderFrame.current) {
-      const svg = scrollSvg(sliderFrame.current, {
+      scrollSvg(sliderFrame.current, {
         offset: window.innerWidth > 800 ? -100 : 0,
       });
     }

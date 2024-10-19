@@ -9,7 +9,7 @@ const AOSHeroImageContainer: React.FC = () => {
 
   useEffect(() => {
     if (pathSide1.current) {
-      const svg = scrollSvg(pathSide1.current, {
+      scrollSvg(pathSide1.current, {
         invert: true,
         offset: window.innerWidth > 800 ? -100 : 0,
       });
@@ -18,7 +18,7 @@ const AOSHeroImageContainer: React.FC = () => {
 
   useEffect(() => {
     if (pathSide2.current) {
-      const svg = scrollSvg(pathSide2.current, {
+      scrollSvg(pathSide2.current, {
         invert: true,
         offset: window.innerWidth > 800 ? -100 : 0,
       });
